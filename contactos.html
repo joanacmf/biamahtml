@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+	<title>BiAMa</title>
+	<meta name="description" content="Website oficial da Biblioteca Aberta de Materiais">
+	<meta name="keywords" content="Biblioteca,Materiais,Lisboa,Projetos">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>	
+	<meta name="author" content="Filipe Cortez, Joana Fernandes, Mayhara Ferraz (3ºL)">
+	<meta charset="UTF-8">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<header>
+		<div class="row size100">
+			<div class="four columns">
+				<a id="menu_icon">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+						<path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z" fill="#d26128"></path>
+					</svg>
+				</a>
+				<a href="index.html" title="BiAMa - Biblioteca Aberta de Materiais">	
+					<img src="imagens/logo.jpg" class="logo" alt="Logo BiAMa" />
+				</a>
+			</div>
+			<div class="four columns">
+				<div class="search">
+					<input type="text" name="pesquisa" placeholder="Pesquisar"><a href="#"><i class="fa fa-search"></i></a>
+				</div>
+			</div>
+			<div class="four text-right languages columns">
+				<a href="#">PT</a> | 
+				<a href="#">EN</a> | 
+				<a href="#">FR</a> | 
+				<a href="#">ES</a>
+
+				<br>
+				<br>
+				<br>
+				<br>
+				
+				<a href="#">Iniciar sessão</a> | <a href="#">Registar</a>
+				
+			</div>
+		</div>
+	</header>
+
+	<div id="drawer">
+		<nav>
+			<a href="#" id="menu_close" ><i class="fa fa-times"></i></a>
+			<br>
+			<a href="sobrenos.html">SOBRE NÓS</a>
+			<br>
+			<a href="materiais.html">MATERIAIS</a>
+			<br>
+			<a href="projectos.html">PROJETOS</a>
+			<br>
+			<a href="comoconstruir.html">COMO CONSTRUIR</a>
+			<br>
+			<a href="contactos.html" class="active">CONTACTOS</a>	  
+		</nav>
+	</div>
+	<script>
+		var menu_icon = document.querySelector('#menu_icon');
+		var container = document.querySelector("#menu_close");
+		var drawer = document.querySelector('#drawer');
+		
+		menu_icon.addEventListener('click', function (e) {
+			drawer.classList.toggle('open');
+			e.stopPropagation();
+		});
+		container.addEventListener('click', function () {
+			drawer.classList.remove('open');
+		});
+	</script>
+
+	<nav>
+		<a href="sobrenos.html">SOBRE NÓS</a>
+		<a href="materiais.html">MATERIAIS</a>
+		<a href="projectos.html">PROJETOS</a>
+		<a href="comoconstruir.html">COMO CONSTRUIR</a>
+		<a href="contactos.html" class="active">CONTACTOS</a>	    
+	</nav>
+
+    <div class="row" style="margin-top: 60px;margin-bottom: 60px;">	
+		<div class="four text-center columns">	
+			<div class="icon-laranja">
+				<i class="fa fa-phone"></i>
+			</div>
+			<p>
+				234-356-466
+			</p>
+		</div>
+		<div class="four text-center columns">	
+			<div class="icon-azul">
+				<i class="fa fa-home"></i>
+			</div>
+			<p>
+				Rua Maria Augusta nº 23<br>
+				1234-123 Lisboa
+			</p>
+		</div>
+		<div class="four text-center columns">	
+			<div class="icon-laranja">
+				<i class="fa fa-envelope"></i>
+			</div>
+			<p>
+				biamapt@xpto.pt
+			</p>
+		</div>
+	</div>
+
+	<div class="testemunhobox" style="margin-top: 40px;margin-bottom: 40px;">
+		<div class="row">
+			<div class="twelve text-center columns">
+				<h3>FAQ</h3>
+				<hr>
+			</div>
+			<div class="twelve columns">
+				<h3>O QUE É UMA BIBLIOTECA ABERTA?</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum
+					-
+					my nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+					Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper sus
+					-
+					cipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel 
+					eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel  
+				</p>
+				<br>
+
+				<h3>O QUE É A BIAMA?</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum
+					-
+					my nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+					Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper sus
+					-
+					cipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel 
+					eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel  
+				</p>
+				<br>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="row" style="margin-bottom: 40px;">
+		<div class="twelve text-center columns">
+			<h3>TEM ALGUMA DÚVIDA? CONTACTE-NOS!</h3>
+			<hr>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="two columns">&nbsp;</div>
+		<div class="eight columns">
+			<form action="/action_page.php">
+				<input type="text" name="nome" placeholder="NOME">
+				<input type="text" name="email" placeholder="E-MAIL">
+				<textarea rows="6" name="mensagem" placeholder="MENSAGEM"></textarea> 
+				
+				<div class="text-center" style="margin-top:20px;">
+					<input type="submit" class="button" value="Enviar">
+				</div>
+			</form> 
+		</div>
+	</div>
+
+	<br><br>
+	<br><br>
+	
+	<footer>
+		<div class="row size100">
+			<div class="one columns">&nbsp;</div>
+			<div class="three columns">
+				<p><strong>SOBRE NÓS</strong></p>
+				<p>
+					Lorem ipsum dolor sit
+					amet, consectetuer
+					adipiscing elit, sed
+					diam nonummy nibh
+					eu
+				</p>
+			</div>
+			<div class="one columns">&nbsp;</div>
+			<div class="three columns">
+				<p><strong>CONTACTOS</strong></p>
+				<p>
+					Morada: Rua Maria<br>
+					Augusta Nº56<br>
+					3456-344 Lisboa<br>
+					Tel: 234-245-345
+				</p>
+			</div>
+			<div class="one columns">&nbsp;</div>
+			<div class="three social columns">
+				<p><strong>REDES SOCIAIS</strong></p>
+				<a href="#" target="_blank">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+						<i class="fa fa-facebook fa-stack-1x"></i>
+					</span>
+					@biamapt
+				</a><br><br>
+				<a href="#" target="_blank">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+						<i class="fa fa-instagram fa-stack-1x"></i>
+					</span>
+					@biamapt
+				</a><br>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

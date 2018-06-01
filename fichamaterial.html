@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+<head>
+	<title>BiAMa</title>
+	<meta name="description" content="Website oficial da Biblioteca Aberta de Materiais">
+	<meta name="keywords" content="Biblioteca,Materiais,Lisboa,Projetos">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>	
+	<meta name="author" content="Filipe Cortez, Joana Fernandes, Mayhara Ferraz (3ºL)">
+	<meta charset="UTF-8">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<header>
+		<div class="row size100">
+			<div class="four columns">
+				<a id="menu_icon">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+						<path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z" fill="#d26128"></path>
+					</svg>
+				</a>
+				<a href="index.html" title="BiAMa - Biblioteca Aberta de Materiais">	
+					<img src="imagens/logo.jpg" class="logo" alt="Logo BiAMa" />
+				</a>
+			</div>
+			<div class="four columns">
+				<div class="search">
+					<input type="text" name="pesquisa" placeholder="Pesquisar"><a href="#"><i class="fa fa-search"></i></a>
+				</div>
+			</div>
+			<div class="four text-right languages columns">
+				<a href="#">PT</a> | 
+				<a href="#">EN</a> | 
+				<a href="#">FR</a> | 
+				<a href="#">ES</a>
+
+				<br>
+				<br>
+				<br>
+				<br>
+				
+				<a href="#">Iniciar sessão</a> | <a href="#">Registar</a>
+				
+			</div>
+		</div>
+	</header>
+
+	<div id="drawer">
+		<nav>
+			<a href="#" id="menu_close" ><i class="fa fa-times"></i></a>
+			<br>
+			<a href="sobrenos.html">SOBRE NÓS</a>
+			<br>
+			<a href="materiais.html" class="active">MATERIAIS</a>
+			<br>
+			<a href="projectos.html">PROJETOS</a>
+			<br>
+			<a href="comoconstruir.html">COMO CONSTRUIR</a>
+			<br>
+			<a href="contactos.html">CONTACTOS</a>	  
+		</nav>
+	</div>
+	<script>
+		var menu_icon = document.querySelector('#menu_icon');
+		var container = document.querySelector("#menu_close");
+		var drawer = document.querySelector('#drawer');
+		
+		menu_icon.addEventListener('click', function (e) {
+			drawer.classList.toggle('open');
+			e.stopPropagation();
+		});
+		container.addEventListener('click', function () {
+			drawer.classList.remove('open');
+		});
+	</script>
+
+	<nav style="margin-bottom: 4px;">
+		<a href="sobrenos.html">SOBRE NÓS</a>
+		<a href="materiais.html" class="active">MATERIAIS</a>
+		<a href="projectos.html">PROJETOS</a>
+		<a href="comoconstruir.html">COMO CONSTRUIR</a>
+		<a href="contactos.html">CONTACTOS</a>	    
+	</nav>
+
+
+	<div class="row size100">
+		<div class="three menulateral columns">
+			<div class="menulimite">
+				<div class="text-center">
+					<h3>Categorias</h3>
+					<hr><br>
+				</div>
+				<a href="#">+ ADICIONAR MATERIAL</a>
+				<br><br><br>
+
+				<h3>Projetos feitos com...</h3>
+				<div class="search">
+					<input type="text" name="pesquisa" placeholder="Pesquisar"><a href="#"><i class="fa fa-search"></i></a>
+				</div>
+				<br><br><br>
+				
+				<div class="menu-acordeao"> 
+					<ul>
+						<li class="active">
+							<ul>
+								<li>
+									<a href="#">Materiais de origem natural</a>
+									<ul>
+										<li><a href="#">Animal</a></li>
+										<li><a href="#">Mineral</a></li>
+										<li><a href="#">Vegetal</a></li>
+										<li><a href="#">Metais puros</a></li>
+									</ul>
+								</li>
+								<li class="active">
+									<a href="#">Materiais sintéticos</a>
+									<ul>
+										<li class="active">
+											<a href="#">Polimeros</a>
+											<ul>
+												<li class="active"><a href="#">Termoplástico</a></li>
+												<li><a href="#">Termoendureciveis</a></li>
+												<li><a href="#">Elastómeros</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Cerâmicos</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<script>
+				jQuery(document).ready(function() {
+					jQuery(".menu-acordeao a").click(function() {
+						var link = jQuery(this);
+						var closest_ul = link.closest("ul");
+						var parallel_active_links = closest_ul.find(".active")
+						var closest_li = link.closest("li");
+						var link_status = closest_li.hasClass("active");
+						var count = 0;
+
+						closest_ul.find("ul").slideUp(function() {
+								if (++count == closest_ul.find("ul").length)
+										parallel_active_links.removeClass("active");
+						});
+
+						if (!link_status) {
+								closest_li.children("ul").slideDown();
+								closest_li.addClass("active");
+						}
+					})
+				})
+
+				</script>
+				
+			</div>		
+		</div>
+		<div class="nine columns">
+		<!-- Ficha do material -->
+			<div class="row" style="margin-top: 60px">
+				<div class="nine columns">
+					<p class="text-center">
+						<img src="imagens/couro.jpg" alt="ficha do material" height="250px"/>
+					</p>
+					<h3 style="text-align: center;">Couro</h3>
+
+					<p>
+						<span style="color:#d26128;text-transform: uppercase;">Descrição: </span>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum
+						my nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+						Ut wisi enim ad
+					</p>
+					
+					<h4 style="margin-bottom: 0px;">Propriedades Fisicas</h4>
+					<p style="margin-top: 0px;">
+						<span style="color:#d26128;text-transform: uppercase;">Densidade: </span> 8f
+					</p>
+					
+					<h4 style="margin-bottom: 0px;">Propriedades Quimicas</h4>
+					<p style="margin-top: 0px;">
+						<span style="color:#d26128;text-transform: uppercase;">Solubiliade: </span> Lorem ipsum
+					</p>
+					
+					<h4 style="margin-bottom: 0px;">Propriedades de Superficie</h4>
+					<p style="margin-top: 0px;">
+						<span style="color:#d26128;text-transform: uppercase;">Molhabilidade: </span>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum
+						my nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+						Ut wisi enim ad
+					</p>
+					
+					<h4 style="margin-bottom: 0px;">Propriedades Ópticas</h4>
+					<p style="margin-top: 0px;">
+						<span style="color:#d26128;text-transform: uppercase;">Cor: </span> Castanho<br>
+						<span style="color:#d26128;text-transform: uppercase;">Transparência: </span> Lorem ipsum dolor sit amet
+					</p>
+					
+					<h4 style="margin-bottom: 0px;">Propriedades Térmicas</h4>
+					<p style="margin-top: 0px;">
+						<span style="color:#d26128;text-transform: uppercase;">Temperatura da Fusão: </span> 
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum
+						my nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+						Ut wisi enim ad<br>
+						<span style="color:#d26128;text-transform: uppercase;">Condutividade Térmica: </span> 
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum
+						my nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+						Ut wisi enim ad
+					</p>
+
+					<h4 style="margin-bottom: 0px;">Propriedades Elétricas</h4>
+					<p style="margin-top: 0px;">
+						<span style="color:#d26128;text-transform: uppercase;">Resistividade: </span>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum
+						my nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+						Ut wisi enim ad
+					</p>
+
+					<h4 style="margin-bottom: 0px;">Propriedades Magnéticas</h4>
+					<p style="margin-top: 0px;">
+						<span style="color:#d26128;text-transform: uppercase;">Susceptibilidade Magnética: </span>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum
+						my nibh euismod tincidunt
+					</p>
+					
+					<h4 style="margin-bottom: 0px;">Outras Propriedades</h4>
+					<p style="margin-top: 0px;">
+						<span style="color:#d26128;text-transform: uppercase;">Reciclabilidade: </span>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum
+						my nibh euismod tincidunt
+					</p>
+
+					<p style="margin-top: 30px;">
+						<a href="#" style="color:#d26128;"><i class="fa fa-map-marker fa-2x" style="margin-right: 15px;margin-left: 8px;color:black;"></i> Onde encontrar</a>
+					</p>
+					<p style="margin-bottom: 30px;">
+						<a href="#" style="color:#d26128;"><i class="fa fa-star-o fa-2x" style="margin-right: 8px;color:gold;"></i> Adicionar aos favoritos</a>
+					</p>
+					
+					<p>
+						<span style="color:#d26128;text-transform: uppercase;">Adicionado por:</span> <a href="#">Catarina Mendes</a><br>
+					</p> 
+
+					<p style="margin-bottom: 100px;">
+						<span style="color:#909090;">30 Outubro 2017</span>
+					</p>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<footer>
+		<div class="row size100">
+			<div class="one columns">&nbsp;</div>
+			<div class="three columns">
+				<p><strong>SOBRE NÓS</strong></p>
+				<p>
+					Lorem ipsum dolor sit
+					amet, consectetuer
+					adipiscing elit, sed
+					diam nonummy nibh
+					eu
+				</p>
+			</div>
+			<div class="one columns">&nbsp;</div>
+			<div class="three columns">
+				<p><strong>CONTACTOS</strong></p>
+				<p>
+					Morada: Rua Maria<br>
+					Augusta Nº56<br>
+					3456-344 Lisboa<br>
+					Tel: 234-245-345
+				</p>
+			</div>
+			<div class="one columns">&nbsp;</div>
+			<div class="three social columns">
+				<p><strong>REDES SOCIAIS</strong></p>
+				<a href="#" target="_blank">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+						<i class="fa fa-facebook fa-stack-1x"></i>
+					</span>
+					@biamapt
+				</a><br><br>
+				<a href="#" target="_blank">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+						<i class="fa fa-instagram fa-stack-1x"></i>
+					</span>
+					@biamapt
+				</a><br>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
